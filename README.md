@@ -18,7 +18,7 @@ To start the demo server using docker instead, `cd` to the source directory and 
 
 ```bash
 docker build -t crud .
-docker run -it -p 8080:8080 crud
+docker run -it -p 8080:8080 --rm crud
 ```
 
 In both cases the running app will be available on localhost:8080.
@@ -60,6 +60,7 @@ The server's in-memory data store is implemented using a Go map. To make it thre
 Possible improvements
 =======
 
+* Implement a more specific error protocol (return app-specific error codes instead of a generic HTTP 400 or 500)
 * Use a networked data store (e.g. Redis or an RDS)
 * Implement basic unit tests
 * Implement a hypermedia format (e.g. Siren) for the API JSON responses to make it easier to consume them using a standard parser
